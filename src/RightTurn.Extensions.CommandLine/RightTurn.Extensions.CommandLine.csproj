@@ -11,6 +11,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>Provides CommandLineParser extensions for RightTurn start-up container.</Description>
     <PackageTags>right turn start-up container application main logging configuration exceptions commandline command line</PackageTags>
+    <RepositoryUrl>https://github.com/Jandini/RightTurn.Extensions.CommandLine</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -24,12 +25,11 @@
   <ItemGroup>
     <PackageReference Include="RightTurn" Version="0.1.0-alpha.1" />
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
-    <PackageReference Include="GitVersionTask" Version="5.3.3">
+    <PackageReference Include="GitVersionTask" Version="5.5.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
 
   <ItemGroup>
     <None Include="..\..\res\Turn.png">
