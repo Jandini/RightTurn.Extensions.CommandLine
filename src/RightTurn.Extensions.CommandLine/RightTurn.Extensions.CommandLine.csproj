@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
     <RootNamespace>RightTurn.Extensions.CommandLine</RootNamespace>
     <Authors>Matt Janda</Authors>
     <PackageIcon>Turn.png</PackageIcon>
@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RightTurn" Version="0.1.0-alpha.3" />
+    <PackageReference Include="RightTurn" Version="0.1.0-alpha.5" />
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
     <PackageReference Include="GitVersionTask" Version="5.5.1">
       <PrivateAssets>all</PrivateAssets>
