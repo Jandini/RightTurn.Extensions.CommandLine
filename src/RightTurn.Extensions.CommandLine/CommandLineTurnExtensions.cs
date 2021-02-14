@@ -36,7 +36,7 @@ namespace RightTurn.Extensions.CommandLine
             var parserResult = turn.GetParser().ParseArguments(args, verbs);
 
             parserResult
-                .WithNotParsed((e) => { unparsed.Invoke(parserResult); Environment.Exit(1); })
+                .WithNotParsed((e) => { unparsed?.Invoke(parserResult); Environment.Exit(1); })
                 .WithParsed((o) => { parsed = o; });
 
             turn.Directions.Add(parsed);            
