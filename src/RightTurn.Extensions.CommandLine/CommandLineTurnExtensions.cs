@@ -28,7 +28,6 @@ namespace RightTurn.Extensions.CommandLine
             return turn;
         }
 
-
         public static ITurn ParseVerbs(this ITurn turn, string[] args, Type[] verbs, Action<ParserResult<object>> unparsed = null)
         {
             object parsed = default;
@@ -77,7 +76,7 @@ namespace RightTurn.Extensions.CommandLine
         public static ITurn WithOptionsAsSingleton<T>(this ITurn turn) where T: class
         {
             turn.Directions.Get<IServiceCollection>()
-                .AddSingleton(turn.Directions.Get<ITurnArgs>().GetArgs<T>());
+                .AddSingleton(turn.Directions.Get<ITurnArgs>().GetOptions<T>());
 
             return turn;
         }
@@ -96,17 +95,15 @@ namespace RightTurn.Extensions.CommandLine
             where TImplementation : class, TService
         {
             turn.Directions.Get<IServiceCollection>()
-                .AddSingleton<TService>(turn.Directions.Get<ITurnArgs>().GetArgs<TImplementation>());
+                .AddSingleton<TService>(turn.Directions.Get<ITurnArgs>().GetOptions<TImplementation>());
             return turn;
         }
              
 
-
-
         public static ITurn ParseOptions<T>(this ITurn turn, string[] args, out T options, Action<ParserResult<T>> unparsed = null)
         {
             turn.ParseOptions(args, unparsed);
-            options = turn.Directions.Get<ITurnArgs>().GetArgs<T>();
+            options = turn.Directions.Get<ITurnArgs>().GetOptions<T>();
             return turn;
         }
 

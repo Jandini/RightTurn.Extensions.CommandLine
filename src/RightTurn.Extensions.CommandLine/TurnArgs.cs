@@ -4,21 +4,21 @@ namespace RightTurn.Extensions.CommandLine
 {
     internal class TurnArgs : ITurnArgs
     {
-        public object Args { get; private set; }        
+        public object Options { get; private set; }        
         
-        public TurnArgs(object args)
+        public TurnArgs(object options)
         {
-            Args = args;
+            Options = options;
         }
 
-        public T GetArgs<T>()
+        public T GetOptions<T>()
         {
-            return (T)Args;
+            return (T)Options;
         }
 
-        public bool TryGetArgs<T>(out T args)
+        public bool TryGetOptions<T>(out T args)
         {
-            if (Args is T t)
+            if (Options is T t)
             {
                 args = t;
                 return true;
