@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace RightTurn.Extensions.CommandLine
 {
-    public static class CommandLineTurnExtensions
+    public static class TurnCommandLineExtensions
     {
         private static Type[] LoadVerbs()
         {

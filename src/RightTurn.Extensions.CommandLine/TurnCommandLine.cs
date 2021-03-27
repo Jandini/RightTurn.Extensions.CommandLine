@@ -3,16 +3,16 @@ using System;
 
 namespace RightTurn.Extensions.CommandLine
 {
-    public static class CommandLineTurn
+    public static class TurnCommandLine
     {
         public static int Take<TService, TImplementation, TOptions>(string[] args, Func<TService, int> run, Action<IServiceCollection> services = null)
-          where TOptions : class
-          where TService : class
-          where TImplementation : class, TService => new Turn()
-              .ParseOptions<TOptions>(args)
-              .WithOptionsAsSingleton<TOptions>()
-              .WithServices(services)
-              .Take<TService, TImplementation>(run);
+            where TOptions : class
+            where TService : class
+            where TImplementation : class, TService => new Turn()
+                .ParseOptions<TOptions>(args)
+                .WithOptionsAsSingleton<TOptions>()
+                .WithServices(services)
+                .Take<TService, TImplementation>(run);
 
         public static void Take<TService, TImplementation, TOptions>(string[] args, Action<TService> run, Action<IServiceCollection> services = null)
             where TOptions : class
